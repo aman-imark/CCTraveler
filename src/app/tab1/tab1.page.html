@@ -1,0 +1,29 @@
+<ion-header class="color">
+    <ion-toolbar>
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="flag-section">
+        <figure>
+            <img [src]="homeData.flag">
+        </figure>
+        <h2>{{homeData?.name}}</h2>
+        <div [innerHtml]="homeData?.description"></div>
+
+        <ion-slides pager="true" [options]="slideOpts" *ngFor="let img of homeData?.imageSlider">
+            <ion-slide>
+                <img [src]="img.image_file">
+            </ion-slide>
+        </ion-slides>
+
+        <h2>Know more about {{homeData?.name}}</h2>
+        <div [innerHtml]="homeData?.know_more"></div>
+
+    </div>
+
+</ion-content>

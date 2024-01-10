@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Payment</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #f="ngForm" (ngSubmit)="pay(f)">
+        <ion-list>
+            <ion-item lines="none" class="form-group">
+                <label>
+        <ion-label>Card Number</ion-label>
+        <ion-input type="tel" maxlength="4" class="form-control card" placeholder="XXXX"  #a (ionInput)="moveFocus($event, b)"  name="card1" ngModel></ion-input>
+        <ion-input type="tel" class="form-control card" placeholder="XXXX" maxlength="4"  #b (ionInput)="moveFocus($event,c)" name="card2" ngModel></ion-input>
+        <ion-input type="tel" class="form-control card" placeholder="XXXX" maxlength="4"  #c (ionInput)="moveFocus($event,d)" name="card3" ngModel></ion-input>
+        <ion-input type="tel" class="form-control card" placeholder="XXXX" maxlength="4"  #d (ionInput)="moveFocus($event,e)" name="card4" ngModel></ion-input>
+      </label>
+            </ion-item>
+            <ion-item lines="none" class="form-group">
+                <label>
+        <ion-label>Card holder name</ion-label>
+        <ion-input type="text" class="form-control"  #e name="card_holder_name" ngModel></ion-input>
+      </label>
+            </ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-item lines="none" class="form-group">
+                            <label>
+                            <ion-label>Valid thru</ion-label>
+                            <!-- <ion-input type="text" class="form-control" placeholder="21/24" name="valid_thru" ngModel></ion-input> -->
+                            <ion-datetime  displayFormat="MM/YYYY"  [min]="currentYear" [max]="futureYear" class="form-control" placeholder="21/24" name="valid_thru" ngModel></ion-datetime>
+                          </label>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item lines="none" class="form-group">
+                            <label>
+                            <ion-label>CVC</ion-label>
+                            <ion-input type="tel" class="form-control" placeholder="XXX" name="CVC" maxlength="3" ngModel></ion-input>
+                          </label>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+        <ion-button type="submit" class="btn mb-2">
+            Proceed to payment
+        </ion-button>
+    </form>
+</ion-content>

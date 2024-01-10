@@ -1,0 +1,50 @@
+<ion-header class="no-background">
+    <ion-toolbar>
+        <ion-title>Subscription Packages</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+
+        <ion-slide>
+            <figure style="background-image:url('assets/1-01.png');">
+                <h2>Basic</h2>
+                <p>Lorem Ipsum is simply dummy text</p>
+                <div class="price">
+                    <h3><sup>$</sup>1.99</h3>
+                    <p>per use</p>
+                </div>
+                <p>Limit one country look up<br> per 3 months</p>
+                <ion-button class="btn" color="primary" (click)="gotoPage(1, 'price_1JD4uiBzW7VGEAzFSlDVEg3O')">Get Started</ion-button>
+            </figure>
+        </ion-slide>
+
+        <ion-slide>
+            <figure style="background-image:url('assets/2-01.png');">
+                <h2>Standard</h2>
+                <p>Lorem Ipsum is simply dummy text</p>
+                <div class="price">
+                    <h3><sup>$</sup>4.99</h3>
+                    <p>per month</p>
+                </div>
+                <p>Unlimited</p>
+                <ion-button class="btn" color="primary" (click)="gotoPage(2, 'price_1JD4vRBzW7VGEAzFw9XoMs1N')">Get Started</ion-button>
+            </figure>
+        </ion-slide>
+
+        <ion-slide>
+            <figure style="background-image:url('assets/3-01.png');">
+                <h2>Premium</h2>
+                <p>Lorem Ipsum is simply dummy text</p>
+                <div class="price">
+                    <h3><sup>$</sup>20</h3>
+                    <p>per 6 month</p>
+                </div>
+                <p>Unlimited</p>
+                <ion-button class="btn" color="primary" (click)="gotoPage(3, 'price_1JD4wNBzW7VGEAzFQdnhdwLd')">Get Started</ion-button>
+            </figure>
+        </ion-slide>
+    </ion-slides>
+    <ion-text routerLink="/home/tabs/tab1" class="skip">Skip</ion-text>
+</ion-content>

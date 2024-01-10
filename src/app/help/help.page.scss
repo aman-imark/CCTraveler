@@ -1,0 +1,10 @@
+ion-header.no-background ion-toolbar {
+    --background: #d3f4f6;
+  }
+
+form .form-group ion-textarea.form-control {
+    height: 170px;
+    --min-height: 170px;
+    --padding-top: 8px;
+    border-radius: 16px;
+}

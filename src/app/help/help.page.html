@@ -1,0 +1,36 @@
+<ion-header class="no-background">
+    <ion-toolbar>
+        <ion-buttons  style="position: absolute;top: 10px;left: 5px;">
+            <ion-back-button defaultHref="/my-profile" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>Help</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="m-width mb-2" #f="ngForm" (ngSubmit)="supportTicket(f)">
+        <input type="hidden" name="user_id" ngModel/>
+        <ion-list>
+
+            <ion-item lines="none" class="form-group">
+                <label>
+          <ion-label>Subject</ion-label>
+          <ion-input type="text" class="form-control" name="subject" ngModel></ion-input>
+        </label>
+            </ion-item>
+
+            <ion-item lines="none" class="form-group">
+                <label>
+          <ion-label>Message</ion-label>
+          <ion-textarea class="form-control" placeholder="Write a message here" name="message" ngModel></ion-textarea>
+        </label>
+            </ion-item>
+
+            <ion-item lines="none" class="form-group submit-btn mb-0">
+                <ion-button type="submit" class="btn" color="primary">
+                    Submit
+                </ion-button>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

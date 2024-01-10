@@ -1,0 +1,105 @@
+<ion-header class="no-background">
+    <ion-toolbar>
+        <ion-buttons  style="position: absolute;top: 10px;left: 5px;">
+            <ion-back-button defaultHref="/home/tabs/tab3" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title style="text-align:center;">Account Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <div class="package-box">
+                <div class="package-box-head yellow">
+                    <h2>Basic {{userData?.plan}}</h2>
+                    <p>Lorem ipsum is dummy text.</p>
+                </div>
+                <div class="package-box-body">
+                    <h2 class="price">$1.99</h2>
+                    <p *ngIf="userData?.plan == 1">Current Plan</p>
+
+                    <div class="foot" *ngIf="userData?.plan == 0" (click)="activatePlan(1, 'price_1J7HT8KNWIVkO81pJMquMd3w')">
+                        <ion-button color="primary">Activate plan</ion-button>
+                    </div>
+
+                    <div class="foot" *ngIf="userData?.plan != 0 && userData?.plan != 1">
+                        <ion-button color="primary" (click)="upgardPlan(1, 'price_1J7HT8KNWIVkO81pJMquMd3w',history?.currentPlan?.subscription_id)">Update plan</ion-button>
+                    </div>
+
+                    <div class="foot active" *ngIf="userData?.plan == 1">
+                        <p>{{history?.currentPlan?.current_period_start}} - {{history?.currentPlan?.current_period_end}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="package-box">
+                <div class="package-box-head blue">
+                    <h2>Standard</h2>
+                    <p>Lorem ipsum is dummy text.</p>
+                </div>
+                <div class="package-box-body">
+                    <h2 class="price">$4.99</h2>
+                    <p *ngIf="userData?.plan == 2">Current Plan</p>
+
+                    <div class="foot" *ngIf="userData?.plan == 0" (click)="activatePlan(2, 'price_1J7HTZKNWIVkO81pnlhWu3Ml')">
+                        <ion-button color="primary">Activate plan</ion-button>
+                    </div>
+
+                    <div class="foot" *ngIf="userData?.plan != 0 && userData?.plan != 2">
+                        <ion-button (click)="upgardPlan(2, 'price_1J7HTZKNWIVkO81pnlhWu3Ml',history?.currentPlan?.subscription_id)" color="primary">Update plan</ion-button>
+                    </div>
+
+                    <div class="foot active" *ngIf="userData?.plan == 2">
+                        <p>{{history?.currentPlan?.current_period_start}} - {{history?.currentPlan?.current_period_end}}</p>
+                    </div>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="package-box">
+                <div class="package-box-head purple">
+                    <h2>Premium</h2>
+                    <p>Lorem ipsum is dummy text.</p>
+                </div>
+                <div class="package-box-body">
+                    <h2 class="price">$20.00</h2>
+                    <p *ngIf="userData?.plan == 3">Current Plan</p>
+
+                    <div class="foot" *ngIf="userData?.plan == 0 ">
+                        <ion-button color="primary" (click)="activatePlan(3, 'price_1J7HUuKNWIVkO81piW2PPz5A')">Activate plan</ion-button>
+                    </div>
+
+                    <div class="foot" *ngIf="userData?.plan != 0 && userData?.plan != 3">
+                        <ion-button color="primary" (click)="upgardPlan(3, 'price_1J7HUuKNWIVkO81piW2PPz5A',history?.currentPlan?.subscription_id)">Update plan</ion-button>
+                    </div>
+
+
+                    <div class="foot active" *ngIf="userData?.plan == 3">
+                        <p>{{history?.currentPlan?.current_period_start}} - {{history?.currentPlan?.current_period_end}}</p>
+                    </div>
+                </div>
+            </div>
+        </ion-slide>
+
+    </ion-slides>
+
+    <div class="past-payments-list">
+        <article *ngFor="let list of history?.history">
+            <p>Payment Date</p>
+            <h6>{{list?.date}}</h6>
+
+            <p>Transaction id <strong>{{list?.trx_id}}</strong></p>
+
+            <div class="amount">
+                <p>Amount</p>
+                <h6>${{list?.amount}}</h6>
+            </div>
+        </article>
+
+    </div>
+
+</ion-content>

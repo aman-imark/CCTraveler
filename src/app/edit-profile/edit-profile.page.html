@@ -1,0 +1,72 @@
+<ion-header class="no-background">
+    <ion-toolbar>
+        <ion-buttons  style="position: absolute;top: 10px;left: 5px;">
+            <ion-back-button defaultHref="/my-profile" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>Edit Profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="pa-0">
+    <div class="auth-section">
+
+        <div class="auth-box">
+            <form class="m-width" #f="ngForm" (ngSubmit)="updateProfile(f)">
+                <ion-list>
+
+                    <ion-item lines="none" class="form-group no-background">
+                        <label>
+              <div class="edit-profile" >
+                <figure>
+                  <img [src]=this.img>
+                </figure>
+                <a href="javascript:void(0);" (click)="takeSnap()" class="edit-btn"><ion-icon name="camera"></ion-icon></a>
+              </div>
+            </label>
+                    </ion-item>
+
+                    <ion-item lines="none" class="form-group">
+                        <label>
+              <ion-label>First Name</ion-label>
+              <ion-input type="text" class="form-control" name="first_name" [value]="userData?.first_name" ngModel></ion-input>
+            </label>
+                    </ion-item>
+                    <ion-item lines="none" class="form-group">
+                        <label>
+            <ion-label>Last Name</ion-label>
+            <ion-input type="text" class="form-control" name="last_name" [value]="userData?.last_name" ngModel></ion-input>
+          </label>
+                    </ion-item>
+
+                    <ion-item lines="none" class="form-group">
+                        <label>
+              <ion-label>Email</ion-label>
+              <ion-input type="email" class="form-control" name="email" [value]="userData?.email" ngModel></ion-input>
+            </label>
+                    </ion-item>
+
+                    <ion-item lines="none" class="form-group">
+                        <label>
+            <ion-label>Country</ion-label>
+            <ion-select class="form-control" name="location" [value]="userData?.location" ngModel>
+              <ion-select-option *ngFor="let loc of locationList" [value]="loc?.loc_id">{{loc?.loc_name}}</ion-select-option>
+            </ion-select>
+          </label>
+                    </ion-item>
+
+                    <ion-item lines="none" class="form-group submit-btn mb-1">
+                        <ion-button type="submit" class="btn" color="primary">
+                            Update
+                        </ion-button>
+                    </ion-item>
+
+                    <ion-text class="text-center mb-0">
+                        <a routerLink="/my-profile" class=" no-line">Cancel</a>
+                    </ion-text>
+                </ion-list>
+            </form>
+
+        </div>
+
+    </div>
+</ion-content>

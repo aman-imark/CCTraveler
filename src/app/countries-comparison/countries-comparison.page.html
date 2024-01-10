@@ -1,0 +1,199 @@
+<ion-header class="no-background">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>Characteristics Scale</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="flag-section" *ngIf="compData != '' ">
+
+        <div class="vs-flag">
+            <div class="elem-start">
+                <figure>
+                    <img [src]="compData?.user_flag">
+                </figure>
+                <p>{{compData?.user_country_name}}</p>
+            </div>
+            <h6>VS</h6>
+            <div class="elem-end">
+                <figure>
+                    <img [src]="compData?.comp_flag">
+                </figure>
+                <p>{{compData?.comp_country_name}}</p>
+            </div>
+
+        </div>
+
+        <div class="progress-section">
+
+            <article>
+                <div class="elem-start">
+                    <p>Preferred language</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_preferred_language+'0%'">{{compData?.user_preferred_language}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_preferred_language+'0%'">{{compData?.comp_preferred_language}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="elem-start">
+                    <p>Communicating - low context vs high context</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_communicating+'0%'">{{compData?.user_communicatingz}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_communicating+'0%'">{{compData?.comp_communicating}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Evaluating - direct negative vs indirect negative</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_preferred_language+'0%'">{{compData?.user_evaluating}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_evaluating+'0%'">{{compData?.comp_evaluating}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Leading - egalitarian vs hierarchical</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_lead+'0%'">{{compData?.user_lead}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_lead+'0%'">{{compData?.comp_lead}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Deciding - consensual vs top down</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_deciding+'0%'">{{compData?.user_deciding}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_deciding+'0%'">{{compData?.comp_deciding}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Trusting task based vs relationship based</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_trusting+'0%'">{{compData?.user_trusting}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_trusting+'0%'">{{compData?.comp_trusting}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Disagreeing - confrontational vs avoids confrontation</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_disagreeing+'0%'">{{compData?.user_disagreeing}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_disagreeing+'0%'">{{compData?.comp_disagreeing}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Scheduling - linear time vs flexible time</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_scheduling+'0%'">{{compData?.user_scheduling}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_scheduling+'0%'">{{compData?.comp_scheduling}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="elem-start">
+                    <p>Persuading - Principles First vs Applications First</p>
+                </div>
+                <div class="elem-end">
+                    <div class="progress-bar">
+                        <span style="background: #2B82D5;" [style.width]="compData?.user_persuading+'0%'">{{compData?.user_persuading}}</span>
+                        <figure><img [src]="compData?.user_flag"></figure>
+                    </div>
+                    <div class="progress-bar">
+                        <span style="background: #CE4766;" [style.width]="compData?.comp_persuading+'0%'">{{compData?.comp_persuading}}</span>
+                        <figure><img [src]="compData?.comp_flag"></figure>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div [innerHtml]="compData?.comp_description"></div>
+
+        <!-- <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide>
+                <img src="/assets/dummy-image-1.png">
+            </ion-slide>
+            <ion-slide>
+                <img src="/assets/dummy-image-2.jpg">
+            </ion-slide>
+            <ion-slide>
+                <img src="/assets/dummy-image-3.jpg">
+            </ion-slide>
+            <ion-slide>
+                <img src="/assets/dummy-image-4.jpg">
+            </ion-slide>
+        </ion-slides> -->
+
+        <h2>Know more about Argentina</h2>
+        <div [innerHtml]="compData?.comp_know_more">
+
+        </div>
+    </div>
+</ion-content>

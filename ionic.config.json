@@ -1,0 +1,10 @@
+{
+  "name": "cctravelera",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

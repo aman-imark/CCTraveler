@@ -1,0 +1,24 @@
+ion-grid {
+    --ion-grid-padding: 0;
+    ion-row {
+        margin: 0 -5px;
+    }
+}
+
+.form-control.card {
+    width: calc(100% / 4.26);
+    display: inline-block;
+    margin: 0 3px;
+    height: auto;
+    --padding-top: 12px;
+    --padding-end: 5px;
+    --padding-bottom: 12px;
+    --padding-start: 5px;
+    text-align: center;
+    &:first-of-type {
+        margin-left: 0;
+    }
+    &:last-of-type {
+        margin-right: 0;
+    }
+}

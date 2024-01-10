@@ -1,0 +1,27 @@
+<ion-header class="no-background">
+    <ion-toolbar>
+        <ion-buttons  style="position: absolute;top: 10px;left: 5px;">
+            <ion-back-button defaultHref="/home/tabs/tab3" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>Profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="profile-content">
+        <div class="edit-profile">
+            <figure>
+                <img [src]="userData?.profile_pic">
+            </figure>
+            <a routerLink="/edit-profile" class="edit-btn">
+                <ion-icon name="pencil-outline"></ion-icon>
+            </a>
+
+            <h6>{{userData?.first_name}} {{userData?.last_name}}</h6>
+            <p><a href="javascript:void(0);">{{userData?.email}}</a></p>
+        </div>
+
+        <a routerLink="/change-password" class="bottom-link">Change Password</a>
+    </div>
+
+</ion-content>

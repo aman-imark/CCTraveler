@@ -1,0 +1,54 @@
+<ion-content class="pa-0">
+    <div class="auth-section">
+        <h2>
+            Sign Up
+        </h2>
+        <div class="auth-box">
+            <form class="m-width" #f="ngForm" (ngSubmit)="register(f)"  (keyup.enter)="register(f)">
+                <ion-list>
+                    <ion-item lines="none" class="form-group">
+                        <label>
+                 <ion-label>First Name</ion-label>
+                 <ion-input type="text" class="form-control" name="first_name" ngModel></ion-input>
+              </label>
+                    </ion-item>
+                    <ion-item lines="none" class="form-group">
+                        <label>
+                 <ion-label>Last Name</ion-label>
+                 <ion-input type="text" class="form-control" name="last_name" ngModel></ion-input>
+              </label>
+                    </ion-item>
+                    <ion-item lines="none" class="form-group">
+                        <label>
+                 <ion-label>Location</ion-label>
+                 <ion-select class="form-control" name="location" ngModel>
+                  <!-- <ion-select class="form-control" name="location" [value]="userData?.location" ngModel> -->
+                    <ion-select-option *ngFor="let loc of location" [value]="loc?.loc_id">{{loc?.loc_name}}</ion-select-option>
+                  </ion-select>
+                 <!-- </ion-select> -->
+              </label>
+                    </ion-item>
+                    <ion-item lines="none" class="form-group">
+                        <label>
+                 <ion-label>Email</ion-label>
+                 <ion-input type="email" class="form-control" name="email" ngModel></ion-input>
+              </label>
+                    </ion-item>
+                    <ion-item lines="none" class="form-group">
+                        <label>
+                 <ion-label>Password</ion-label>
+                 <ion-input type="password" class="form-control" name="password" ngModel></ion-input>
+              </label>
+                    </ion-item>
+                    <ion-item lines="none" class="form-group submit-btn mb-0">
+                        <ion-button type="submit" class="btn" color="primary">
+                            Sign Up
+                        </ion-button>
+                    </ion-item>
+                </ion-list>
+            </form>
+        </div>
+        <ion-text class="text-center">Already have an account? <a class="color red" routerLink="/login">Login here</a>
+        </ion-text>
+    </div>
+</ion-content>

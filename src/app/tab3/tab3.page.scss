@@ -1,0 +1,18 @@
+ion-item{
+    --inner-padding-end:0px;
+    --padding-start:0px;
+    --detail-icon-font-size:0px;
+
+    ion-label{
+        font-size: 18px;
+        color: #6D6D6D;
+        font-family: 'Conv_segoeui';
+        font-weight: normal;
+        margin: 15px 8px 15px 0px;
+    }
+    ion-icon{
+        margin-inline: 0;
+        color: #2B82D5;
+    }
+}
+

@@ -1,0 +1,29 @@
+<ion-header class="color">
+    <ion-toolbar>
+        <ion-title>
+            Select A Country
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="search-country">
+        <form>
+            <ion-input type="text" class="form-control" placeholder="" (ionInput)="searchKey($event)"></ion-input>
+            <ion-button type="submit" class="btn search-btn">
+                <ion-icon name="search-outline"></ion-icon>
+            </ion-button>
+        </form>
+    </div>
+
+    <div class="search-list" *ngIf="countryData?.length > 0">
+        <article *ngFor="let cd of countryData">
+            <figure>
+                <a [routerLink]="['/countries-comparison', cd?.country_id]"><img [src]="cd?.flag"></a>
+            </figure>
+            <p><a [routerLink]="['/countries-comparison', cd?.country_id]">{{cd?.country_name}}</a></p>
+        </article>
+    </div>
+
+</ion-content>

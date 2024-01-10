@@ -1,0 +1,55 @@
+<ion-content class="pa-0">
+    <div class="auth-section">
+        <h2>
+            Login
+        </h2>
+
+        <div class="auth-box">
+            <form class="m-width mb-2" #f="ngForm" (ngSubmit)="login(f)" (keyup.enter)="login(f)">
+                <ion-list>
+
+                    <ion-item lines="none" class="form-group">
+                        <label>
+              <ion-label>Email</ion-label>
+              <ion-input type="email" class="form-control" name="email" ngModel></ion-input>
+            </label>
+                    </ion-item>
+
+                    <ion-item lines="none" class="form-group">
+                        <label>
+              <ion-label>Password</ion-label>
+              <ion-input type="password" class="form-control" name="password" ngModel></ion-input>
+            </label>
+                    </ion-item>
+
+                    <ion-text class="text-right mb-2">
+                        <a routerLink="/forgot-password" class="color red no-line">Forgot Password?</a>
+                    </ion-text>
+                    <ion-item lines="none" class="form-group submit-btn mb-0">
+                        <ion-button type="submit" class="btn" color="primary">
+                            Login
+                        </ion-button>
+                    </ion-item>
+                </ion-list>
+            </form>
+
+            <ion-item class="social-btn-group" lines="none">
+                <label>
+          <ion-text class="text-center">or login with</ion-text>
+          <ion-buttons>
+            <ion-button class="social-btn facebook" (click)="fbLoginStatus()">
+              <img src="/assets/fb.png">
+            </ion-button>
+            <ion-button class="social-btn google" (click)="gLogin()">
+              <img src="/assets/google.png">
+            </ion-button>
+          </ion-buttons>
+        </label>
+            </ion-item>
+
+        </div>
+
+        <ion-text class="text-center">Don't have an account? <a class="color red" routerLink="/signup">Register here</a>
+        </ion-text>
+    </div>
+</ion-content>
